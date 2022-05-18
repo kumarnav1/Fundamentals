@@ -60,23 +60,32 @@ public class Main {
     }
 }
 
+interface IBird {
+
+    abstract void fly();
+    void swim();
+    void eat();
+}
+
 abstract class Bird {
+
     String sound;
     String color;
     String name;
     String species;
     String type;
 
-    abstract void eat();
+    abstract void eat();//hidden from client and not given the body of it.
 
     void fly() {
+
     }
 
     void swim() {
     }
 }
 
-class Parrot extends Bird {
+class Parrot implements IBird {
 
     String extra;
 
@@ -85,9 +94,19 @@ class Parrot extends Bird {
     }
 
     @Override
-    void eat() {
+    public void fly() {
+
+    }
+
+    @Override
+    public void swim() {
+
+    }
+
+    @Override
+    public void eat() { //internal function
         System.out.println();
     }
 }
-
+// interface means all function abstarcted
 
