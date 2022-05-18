@@ -55,15 +55,18 @@ public class Main {
         boolean b = isEvenNumber(45);
         System.out.println(b);
 
-        Bird parrot1 = new Parrot();
-
+        Parrot parrot1 = new Parrot();
+        parrot1.integerVar = 45;
+        System.out.println("Parrot class variable " + parrot1.integerVar);
     }
 }
 
 interface IBird {
 
     abstract void fly();
+
     void swim();
+
     void eat();
 }
 
@@ -85,9 +88,19 @@ abstract class Bird {
     }
 }
 
-class Parrot implements IBird {
+class Parrot extends Bird {
 
     String extra;
+    Integer integerVar;
+    String sound;
+
+    Parrot(String sound) {
+        sound = sound;// local
+        this.sound = sound;//current class - 95
+        super.sound = sound;//parent class
+        //sound = sound1;
+
+    }
 
     void extraFun() {
 
